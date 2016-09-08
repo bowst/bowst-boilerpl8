@@ -14,7 +14,8 @@
 
 ##2) Settings
 
-1. TODO: settings file stuff for local editing..
+1. Configure your local site for development (not specific to this theme).  Follow the steps startin on slide #11 in [JP's excellent Drupal 8 Theming slide presentation](https://docs.google.com/presentation/d/1u7NJGbNs55ryeOWRFyQn4oxG5frO3D8AqsSU7Dh1uv0/edit#slide=id.g1334fac1c2_0_129).
+
 
 ##3) Rename and Replace
 
