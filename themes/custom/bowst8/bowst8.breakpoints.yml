@@ -1,0 +1,29 @@
+# Theme-wide breakpoints
+bowst8.mobile:
+  label: Mobile
+  mediaQuery: '(max-width: 767px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+bowst8.tablet:
+  label: Tablet
+  mediaQuery: '(min-width: 768px) and (max-width: 991px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+bowst8.normal:
+  label: Normal
+  mediaQuery: '(min-width: 992px) and (max-width: 1199px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+bowst8.wide:
+  label: Wide
+  mediaQuery: '(min-width: 1200px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x

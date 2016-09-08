@@ -1,0 +1,18 @@
+name: Bowst8
+type: theme
+description: Drupal 8 Boilerplate Theme for Bowst.
+core: 8.x
+version: 1.0
+base theme: bootstrap
+
+regions:
+  topNav: 'Top Nav'
+  header: 'Header'
+  mainNav: 'Main Nav'
+  content: 'Content'
+  footer: 'Footer'
+  footerNav: 'Footer Nav'
+
+screenshot: screenshot.png
+libraries:
+ - bowst8/global-src

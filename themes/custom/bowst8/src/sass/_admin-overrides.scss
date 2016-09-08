@@ -1,0 +1,15 @@
+/* ==============================================================
+   DRUPAL ADMIN OVERRIDES
+   - Ensures our custom styles do not interfere with Drupal
+     admin styles and vice versa.
+   ============================================================== */
+
+
+/* Ensure Contextual Links are the correct color */
+.contextual-links a {
+  color: #333 !important;
+}
+
+/* Provide top padding in Admin to accommodate a fixed header */
+body.user-logged-in {}
+body.toolbar-tray-open.user-logged-in {}

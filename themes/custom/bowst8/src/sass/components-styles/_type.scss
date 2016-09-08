@@ -1,0 +1,41 @@
+/* ===============================================================
+    TYPE
+	- Styles that can be applied to text
+	- The intended real world use for these selectors is for  
+	  creating a quick, nice looking page (that has not been provided 
+	  with a design) in Drupal via the wysiwyg editor.
+	- When creating a page that DOES have a design, it is preferable
+      to assign variables to the elements rather than use these classes.
+	- ** RENAME selectors and variables with your custom color
+	  variable names
+   =============================================================== */
+
+
+/* Text Color */
+.txt-purple { color: $purple; }
+.txt-magenta { color: $magenta; }
+.txt-lilac { color: $lilac; }
+.txt-orange { color: $orange; }
+.txt-pink { color: $pink; }
+.txt-white { color: $white; }
+
+/* Font Weights */
+.weight-book { font-family: $font-family-book }
+.weight-regular { font-weight: $weightRegular; }
+.weight-medium { font-weight: $weightMedium; }
+.weight-semi-bold { font-weight: $weightSemiBold; }
+.weight-bold { font-weight: $weightBold; }
+
+// Text Sizes */
+.txt-sm { font-size: $font-size-small; }
+.txt-base { font-size: $font-size-base; }
+.txt-md { font-size: $font-size-medium; }
+.txt-lg { font-size: $font-size-large; }
+
+/* Font Families */
+.font-sans-serif { font-family: $font-family-sans-serif; }
+.font-serif { font-family: $font-family-serif; }
+
+/* Line Heights */
+.line-height-sm { line-height: $headings-line-height; }
+.line-height-base { line-height: $line-height-base; }

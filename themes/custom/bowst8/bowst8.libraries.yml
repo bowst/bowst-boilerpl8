@@ -1,0 +1,8 @@
+global-src:
+  version: 1.x
+  css:
+    theme:
+      public/css/globals.css: {}
+  js:
+    public/js/scripts.js: {}
+    

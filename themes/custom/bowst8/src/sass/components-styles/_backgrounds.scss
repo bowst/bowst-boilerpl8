@@ -1,0 +1,19 @@
+/* ===============================================================
+    BACKGROUNDS
+	- Consistent and common styles for container backgrounds
+	- The intended real world use for these selectors is for  
+	  creating a quick, nice looking page (that has not been provided 
+	  with a design) in Drupal via the wysiwyg editor.
+	- When creating a page that DOES have a design, it is preferable
+      to assign variables to the elements rather than use these classes.
+	- ** RENAME selectors and variables with your custom color
+	  variable names
+   =============================================================== */
+
+
+/* Brand Background Colors */
+.bg-purple { background: $purple; }
+.bg-magenta { background: $magenta; }
+.bg-lilac { background: $lilac; }
+.bg-orange { background: $orange; }
+.bg-pink { background: $pink; }

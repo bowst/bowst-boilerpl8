@@ -1,0 +1,4 @@
+# Schema for the configuration files for the Bowst8 theme.
+bowst8.settings:
+  type: theme_settings
+  label: 'Bowst8 Settings'
