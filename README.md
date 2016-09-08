@@ -47,7 +47,7 @@
 
 #6) Build!
 
-- First, set up your regions in bowst8.info.yml. It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
+- First, set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
 - Make sure that the copyright "original_year" variable in "templates/system/page.html.twig" is correct.
 - Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
 - Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
