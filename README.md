@@ -1,4 +1,4 @@
-BOWST BOILERPL8
+#BOWST BOILERPL8
 ===============
 
 - Bowst Drupal Boilerpl8 is Bowst's out of the box solution and starting-point for buliding a custom Drupal 8 theme. 
@@ -7,30 +7,30 @@ BOWST BOILERPL8
 - Follow the steps below to get started!
 
 
-#1) Download
+##1) Download
 -----------------
 
 - Download all folders and files to the appropriate locations in your Drupal 8 project. 
 - TODO: Is there an easy way to inject all of this stuff into your Drupal 8 instance?  Can someone write a script?  Make a profile?  Composer?  Drush make?
 
-#2) Settings
+##2) Settings
 -----------------
 
 - TODO: settings file stuff for local editing..
 
-#3) Rename and Replace
+##3) Rename and Replace
 ---------------------------
 
 - Rename all "bowst8" references in yml, config, and system files (including file names) in "custom/bowst8" folder to your theme name (including the "bowst8" folder itself).
 - Override the following in "custom/bowst8" with your theme's custom imagery: logo.svg, screenshot.png, favicon.ico
 
-#4) Install
+##4) Install
 ----------------
 - Install your newly renamed theme in the Drupal admin in "Appearances".
 - Install your contrib modules located from "modules/contrib" in the Drupal admin in "Extend" (you may not need all of them).
 - Install the node packages in terminal in "themes/custom/bowst8" with the command "npm install".
 
-#5) Styles
+##5) Styles
 ---------------
 
 - Begin by overriding global variables in "themes/custom/bowst8/src/sass/_variables.scss".  Create custom variables if necessary.  A good practice here is to scan all templates in the design file and find all consistent styles for headings, colors, paddings, font styles, etc, and apply them to the appropriate variables, creating a solid base for your theme.  ALWAYS check to see if you can achieve your styles first by overriding bootstrap variables, especially when concerning global/default elements or Bootstrap components.
@@ -43,9 +43,9 @@ BOWST BOILERPL8
 
 ### Information
 
--The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components.  It is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' mediaqueries utilizing the breakpoint variables, such as "min-width: $screen-sm-min".
-- Information - 'component-styles' folder vs. 'components-drupal': The "components-styles" folder is for global reusable content that is not bound to a drupal component (like common backgrounds, forms, buttons, etc.), and "components-drupal" are styles that are fully bound to a particular drupal component (such as a view, block, paragraph, etc.).
-- Information - partials: Most of the already created SASS partials, especially the prominent ones like base.scss and variables.scss, have helpful comments at the top of the page describing the purpose and usage of the file.  It is a good idea to go through all of them to get the gist of where things should go.
+- Framework: The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components.  It is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' mediaqueries utilizing the breakpoint variables, such as "min-width: $screen-sm-min".
+- 'Component-styles' vs. 'components-drupal' folder: The "components-styles" folder is for global reusable content that is not bound to a drupal component (like common backgrounds, forms, buttons, etc.), and "components-drupal" are styles that are fully bound to a particular drupal component (such as a view, block, paragraph, etc.).
+- Partials: Most of the already created SASS partials, especially the prominent ones like base.scss and variables.scss, have helpful comments at the top of the page describing the purpose and usage of the file.  It is a good idea to go through all of them to get the gist of where things should go.
 
 #6) Build!
 ---------------
