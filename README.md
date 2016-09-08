@@ -1,8 +1,9 @@
 #BOWST BOILERPL8
 
-- Bowst Drupal Boilerpl8 is Bowst's out of the box solution and starting-point for buliding a custom Drupal 8 theme. 
-- It contains standardized folder structures and files for styles, js, twig templates, and drupal modules, and comes complete with a set of node modules (bootstrap sass, gulp, font awesome, to name a few) and a Gulp build system for compiling styles and javascript.  
-- As subtheme of [Drupal Bootstrap](https://www.drupal.org/project/bootstrap), it's Drupal admin comes with handy Bootstrap features.
+- Bowst Boilerpl8 is Bowst's out of the box solution and starting-point for buliding a custom Drupal 8 theme. 
+- Contains standardized folder structures and files for styles, js, twig templates, and drupal modules.
+- Complete with a set of node modules (bootstrap sass, gulp, font awesome, to name a few) and a Gulp build system for compiling styles and javascript.  
+- A subtheme of [Drupal Bootstrap](https://www.drupal.org/project/bootstrap), it's Drupal admin comes with handy Bootstrap features.
 - Follow the steps below to get started!
 
 
