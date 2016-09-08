@@ -1,0 +1,422 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('author') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('content') }}>
+    {{ content }}
+  </div>
+
+
+  <br /><br />
+
+  <!-- TITLE -->
+  <section class="bg-brand-primary padding-lg-vert">
+    <div class="container text-center">
+      <h1 class="txt-white">STYLE GUIDE</h1><br />
+      <h2 class="txt-white">Inspect the elements below, review SASS partials, and review SASS variables to acheive the demonstrated styles</h2>
+    </div>
+  </section>
+
+
+  <!-- COLORS -->
+  <section class="padding-top">
+    <h1 class="text-center">Colors</h1><br /><br />
+    <div class="row text-center txt-md weight-semi-bold">
+      <div class="col-sm-2 padding-sm-vert bg-gray-base txt-white">
+        Gray Base
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-gray-darker txt-white">
+        Gray Darker
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-gray-dark txt-white">
+        Gray Dark
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-gray">
+        Gray
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-gray-light">
+        Gray Light
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-gray-lighter">
+        Gray Lighter
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-brand-primary txt-white">
+        Brand Primary
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-brand-success txt-white">
+        Brand Success
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-brand-info txt-white">
+        Brand Info
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-brand-warning txt-white">
+        Brand Warning
+      </div>
+      <div class="col-sm-2 padding-sm-vert bg-brand-danger txt-white">
+        Brand Danger
+      </div>
+      </div>
+  </section>
+
+
+  <!-- TYPOGRAPHY -->
+  <section class="padding-vert">
+    <div class="container txt-md">
+      <h1 class="text-center">Typography</h1><br /><br />
+      <div class="row padding-sm-bottom">
+        <div class="col-sm-3">
+          <h2>Types</h2>
+          <a href="#">Anchor</a><br />
+          <strong class="weight-regular">Regular</strong> <br />
+          <strong class="weight-medium">Medium</strong> <br />
+          <strong class="weight-semi-bold">Semi Bold</strong> <br />
+          <strong class="weight-bold">Bold</strong> <br />
+          <em>Italc</em> <br />
+          <s>Strikethrough</s> <br />
+          <u>Underline</u> <br />
+          Sub<sub>script</sub> <br />
+          Super<sup>script</sup>
+        </div>
+        <div class="col-sm-3">
+          <h2>Colors</h2>
+          <span class="txt-brand-primary">Purple</span> <br />
+          <span class="txt-brand-success">Magenta</span><br />
+          <span class="txt-brand-info">Lilac</span> <br />
+          <span class="txt-brand-warning">Orange</span> <br />
+          <span class="txt-brand-danger">Pink</span> <br />
+          <strong class="txt-white bg-brand-success">White</strong>
+        </div>
+        <div class="col-sm-3">
+          <h2>Fonts</h2>
+          <span class="font-sans-serif">Sans Serif</span><br>
+          <span class="font-sans-serif-narrow">Sans Serif Narrow</span><br>
+          <span class="font-serif">Serif</span>
+        </div>
+        <div class="col-sm-3">
+          <h2>Sizes</h2>
+          <span class="txt-sm">Small</span><br>
+          <span class="txt-base">Base</span><br>
+          <span class="txt-md">Medium</span><br>
+          <span class="txt-lg">Large</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <h2>Line Heights</h2>
+          <p class="line-height-sm"><strong>Small line height:</strong> The quick brown fox jumps over the lazy dog.</p>
+          <p class="line-height-base"><strong>Base line height:</strong> The quick brown fox jumps over the lazy dog.</p>
+        </div>
+        <div class="col-sm-3">
+          <h2>Casing</h2>
+          <span class="text-lowercase">Lowercased</span><br>
+          <span class="text-uppercase">Uppercased</span><br>
+          <span class="text-capitalize">Capitalized</span>
+        </div>
+        <div class="col-sm-3">
+          <h2>Paragraphs</h2>
+          <p>The quick brown fox jumps over the lazy dog.</p>
+          <p>The lazy dog jumps over quick brown fox.</p>
+        </div>
+        <div class="col-sm-3">
+          <h2>Blockquote</h2>
+          <blockquote>"Quote"</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HEADINGS -->
+  <section class="bg-brand-success padding-vert">
+    <div class="container">
+      <h1 class="txt-white text-center">Headings</h1><br />
+      <h1><span class="txt-white">H1</span> - The quick brown fox jumps over the lazy dog.</h1>
+      <h2><span class="txt-white">H2</span> - The quick brown fox jumps over the lazy dog.</h2>
+      <h3><span class="txt-white">H3</span> - The quick brown fox jumps over the lazy dog.</h3>
+      <h4><span class="txt-white">H4</span> - The quick brown fox jumps over the lazy dog.</h4>
+      <h5><span class="txt-white">H5</span> - The quick brown fox jumps over the lazy dog.</h5>
+      <h6><span class="txt-white">H6</span> - The quick brown fox jumps over the lazy dog.</h6>
+    </div>
+  </section>
+
+
+  <!-- ALIGNMENT -->
+  <section class="bg-brand-info padding-vert">
+    <div class="container">
+      <h1 class="txt-white text-center">Alignment</h1><br />
+      <h2 class="text-left">Left aligned text.</h2>
+      <h2 class="text-center">Center aligned text.</h2>
+      <h2 class="text-right">Right aligned text.</h2>
+      <h2>Justified text.</h2>
+      <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis non turpis ac varius. Vivamus viverra ante in efficitur aliquet. Vestibulum id lorem sollicitudin, pretium augue in, molestie lacus. Fusce venenatis condimentum porta. Cras consectetur cursus neque, vel laoreet ligula iaculis eu. Mauris diam sem, hendrerit vitae viverra quis, sodales sed lacus. In aliquam tellus non eros efficitur porta.</p>
+      <h2 class="text-nowrap">No wrap text.</h2>
+      <p class="text-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis non turpis ac varius. Vivamus viverra ante in efficitur aliquet.</p>
+    </div>
+  </section>
+
+
+  <!-- LISTS -->
+  <section class="bg-brand-warning padding-vert">
+    <div class="container">
+      <h1 class="txt-white text-center">Lists</h1><br /><br />
+      <div class="row txt-white">
+        <div class="col-sm-4">
+          <h2 class="txt-brand-primary">Unordered Lists</h2>
+          <ul>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>
+              List Item
+              <ol>
+                <li>Sub Item</li>
+                <li>Sub Item</li>
+              </ol>
+            </li>
+            <li>List Item</li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h2 class="txt-brand-primary">Ordered Lists</h2>
+          <ol>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>
+              List Item
+              <ol>
+                <li>Sub Item</li>
+                <li>Sub Item</li>
+              </ol>
+            </li>
+            <li>List Item</li>
+          </ol>
+        </div>
+        <div class="col-sm-4">
+          <h2 class="txt-brand-primary">Unstyled Lists</h2>
+          <ul class="list-unstyled">
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>
+              List Item
+              <ol>
+                <li>Sub Item</li>
+                <li>Sub Item</li>
+              </ol>
+            </li>
+            <li>List Item</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BACKGROUNDS -->
+  <section>
+    <div class="container padding-sm-vert">
+      <h1 class="text-center">Backgrounds</h1>
+    </div>
+    <div class="padding-sm-vert bg-brand-primary">
+      <div class="container">
+        <h2 class="txt-white">Purple background</h2>
+      </div>
+    </div>
+    <div class="padding-sm-vert bg-brand-success">
+      <div class="container">
+        <h2 class="txt-white">Magenta background</h2>
+      </div>
+    </div>
+    <div class="padding-sm-vert bg-brand-info">
+      <div class="container">
+        <h2 class="txt-white">Lilac background</h2>
+      </div>
+    </div>
+    <div class="padding-sm-vert bg-brand-warning">
+      <div class="container">
+        <h2 class="txt-white">Orange background</h2>
+      </div>
+    </div>
+    <div class="padding-sm-vert bg-brand-danger">
+      <div class="container">
+        <h2 class="txt-white">Pink background</h2>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FORMS -->
+  <section class="bg-brand-primary padding-vert">
+    <div class="container">
+      <h1 class="txt-white text-center">Forms</h1><br /><br />
+      <div class="row txt-white">
+        <div class="col-sm-6">
+          <h2 class="txt-white">Fields</h2>
+          <div class="form-group">
+            <label>Input Field Label</label> 
+            <input class="form-control" placeholder="Placeholder" type="text">
+          </div>
+          <div class="form-group">
+            <label>Textarea Label</label>
+            <textarea class="form-control"></textarea>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox">Check box Label</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio">Radio button Label</label>
+          </div>
+          <div class="form-group">
+            <label>Select Menu Label</label> 
+            <select class="form-control">
+              <option>Select Menu</option>
+              <option>Option</option>
+              <option>Option</option></select>
+          </div>
+        </div>
+        <div class="col-sm-4 col-sm-offset-2">
+          <h2 class="txt-white">Buttons</h2>
+          <input type="submit" class="btn btn-purple" value="Submit" /><br /><br />
+          <button class="btn btn-magenta">Submit</button><br /><br />
+          <button class="btn btn-lilac">Submit</button><br /><br />
+          <button class="btn btn-orange">Submit</button><br /><br />
+          <button class="btn btn-pink">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PADDING -->
+  <section class="padding-vert">
+    <div class="container">
+      <h1 class="text-center">Padding</h1><br />
+      <h3>Prepend the following to any 'padding' class for specificity:</h3>
+      <p class="weight-semi-bold">
+        -top<br />
+        -right<br />
+        -bottom<br />
+        -left<br />
+        -vert<br />
+        -horz<br />
+      </p>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="padding-sm bg-brand-danger txt-white">
+            <h3 class="txt-white">Small Padding</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="padding bg-brand-danger txt-white">
+            <h3 class="txt-white">Base Padding</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="padding-md bg-brand-danger txt-white">
+            <h3 class="txt-white">Medium Padding</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="padding-lg bg-brand-danger txt-white">
+            <h3 class="txt-white">Large Padding</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</article>
+
