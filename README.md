@@ -9,31 +9,31 @@
 
 ##1) Download
 
-- Download all folders and files to the appropriate locations in your Drupal 8 project. 
-- TODO: Is there an easy way to inject all of this stuff into your Drupal 8 instance?  Can someone write a script?  Make a profile?  Composer?  Drush make?
+1. Download all folders and files to the appropriate locations in your Drupal 8 project. 
+2. TODO: Is there an easy way to inject all of this stuff into your Drupal 8 instance?  Can someone write a script?  Make a profile?  Composer?  Drush make?
 
 ##2) Settings
 
-- TODO: settings file stuff for local editing..
+1. TODO: settings file stuff for local editing..
 
 ##3) Rename and Replace
 
-- Rename all "bowst8" references in yml, config, and system files (including file names) in "custom/bowst8" folder to your theme name (including the "bowst8" folder itself).
-- Override the following in "custom/bowst8" with your theme's custom imagery: logo.svg, screenshot.png, favicon.ico
+1. Rename all "bowst8" references in yml, config, and system files (including file names) in "custom/bowst8" folder to your theme name (including the "bowst8" folder itself).
+2. Override the following in "custom/bowst8" with your theme's custom imagery: logo.svg, screenshot.png, favicon.ico
 
 ##4) Install
-- Install your newly renamed theme in the Drupal admin in "Appearances".
-- Install your contrib modules located from "modules/contrib" in the Drupal admin in "Extend" (you may not need all of them).
-- Install the node packages in Terminal in "themes/custom/bowst8" with the command "npm install".
+1. Install your newly renamed theme in the Drupal admin in "Appearances".
+2. Install your contrib modules located from "modules/contrib" in the Drupal admin in "Extend" (you may not need all of them).
+3. Install the node packages in Terminal in "themes/custom/bowst8" with the command "npm install".
 
 ##5) Styles
 
-- Begin by overriding global variables in "themes/custom/bowst8/src/sass/_variables.scss".  Create custom variables if necessary.  Most base styles will pop right into place upon the customization of these variables. See "Variables" in the below "Information" section for more tips and advice.
-- Next, style global/default elements (h1, h2, p, a, etc) in _base.scss (only if variables are not available for them in the above file).
-- In "custom/bowst8/src/sass/components-styles" override the color selectors and variables in "_backgrounds.scss" and "_type.scss" with your theme's custom color variables.
-- Style global buttons and forms based on your design in "custom/bowst8/src/sass/components-styles/buttons" and "../forms".
-- Compile your styles with Gulp by using the command "gulp watch" in Terminal in the folder "themes/custom/bowst8"
-- Create your Style Guide page by making a new content type called 'Style Guide' in the Drupal Admin with the url /style-guide.  The twig template in /templates/nodes/node--style-guide.html.twig will automatically apply with all the Style Guide test HTML.  View and test your styles at /style-guide to ensure all elements on the style guide are appropriately styled, matching the consistent styles found in your design. (You might want to update the background classes and add/remove txt-white classes to Style Guide sections to make it look nicer depending on what your brand colors are).
+1. Begin by overriding global variables in "themes/custom/bowst8/src/sass/_variables.scss".  Create custom variables if necessary.  Most base styles will pop right into place upon the customization of these variables. See "Variables" in the below "Information" section for more tips and advice.
+2. Next, style global/default elements (h1, h2, p, a, etc) in _base.scss (only if variables are not available for them in the above file).
+3. In "custom/bowst8/src/sass/components-styles" override the color selectors and variables in "_backgrounds.scss" and "_type.scss" with your theme's custom color variables.
+4. Style global buttons and forms based on your design in "custom/bowst8/src/sass/components-styles/buttons" and "../forms".
+5. Compile your styles with Gulp by using the command "gulp watch" in Terminal in the folder "themes/custom/bowst8"
+6. Create your Style Guide page by making a new content type called 'Style Guide' in the Drupal Admin with the url /style-guide.  The twig template in /templates/nodes/node--style-guide.html.twig will automatically apply with all the Style Guide test HTML.  View and test your styles at /style-guide to ensure all elements on the style guide are appropriately styled, matching the consistent styles found in your design. (You might want to update the background classes and add/remove txt-white classes to Style Guide sections to make it look nicer depending on what your brand colors are).
 
 
 ### *Important Info*
@@ -47,10 +47,10 @@
 
 #6) Build!
 
-- First, set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
-- Make sure that the copyright "original_year" variable in "templates/system/page.html.twig" is correct.
-- Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
-- Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
+1. First, set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
+2. Make sure that the copyright "original_year" variable in "templates/system/page.html.twig" is correct.
+3. Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
+4. Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
 
 ### *Important Info*
 
