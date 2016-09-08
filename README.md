@@ -33,7 +33,7 @@
 - In "custom/bowst8/src/sass/components-styles" override the color selectors and variables in "_backgrounds.scss" and "_type.scss" with your theme's custom color variables.
 - Style global buttons and forms based on your design in "custom/bowst8/src/sass/components-styles/buttons" and "../forms".
 - Compile your styles with Gulp by using the command "gulp watch" in Terminal in the folder "themes/custom/bowst8"
-- TODO: Test your styles in /style-guide .  Ensure all elements on the styleguide are appropriately styled, matching the consistent styles found in your design.
+- Create your Style Guide page by making a new content type called 'Style Guide' in the Drupal Admin with the url /style-guide.  The twig template in /templates/nodes/node--style-guide.html.twig will automatically apply with all the Style Guide test HTML.  View and test your styles at /style-guide to ensure all elements on the style guide are appropriately styled, matching the consistent styles found in your design. (You might want to update the background classes and add/remove txt-white classes to Style Guide sections to make it look nicer depending on what your brand colors are).
 
 
 ### *Important Info*

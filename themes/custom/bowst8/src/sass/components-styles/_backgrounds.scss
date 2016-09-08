@@ -12,8 +12,21 @@
 
 
 /* Brand Background Colors */
+.bg-brand-primary,
 .bg-purple { background: $purple; }
+.bg-brand-success,
 .bg-magenta { background: $magenta; }
+.bg-brand-info,
 .bg-lilac { background: $lilac; }
+.bg-brand-warning,
 .bg-orange { background: $orange; }
+.bg-brand-danger,
 .bg-pink { background: $pink; }
+
+/* Gray Background Colors */
+.bg-gray-base { background: $gray-base; }
+.bg-gray-darker { background: $gray-darker; }
+.bg-gray-dark { background: $gray-dark; }
+.bg-gray { background: $gray; }
+.bg-gray-light { background: $gray-light; }
+.bg-gray-lighter { background: $gray-lighter; }
