@@ -35,7 +35,7 @@
 - TODO: Test your styles in /style-guide .  Ensure all elements on the styleguide are appropriately styled, matching the consistent styles found in your design.
 
 
-### Important Info
+### *Important Info*
 
 - **Framework:** The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components.  It is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' mediaqueries utilizing the breakpoint variables, such as "min-width: $screen-sm-min".
 - **'Component-styles' vs. 'components-drupal' folder:** The "components-styles" folder is for global reusable content that is not bound to a drupal component (like common backgrounds, forms, buttons, etc.), and "components-drupal" are styles that are fully bound to a particular drupal component (such as a view, block, paragraph, etc.).
@@ -46,6 +46,6 @@
 - Build out your header and footer in drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
 - Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
 
-### Important Info
+### *Important Info*
 
 - **Planning:** It is a good idea to plan out the entire Drupal structure of your site before you start building, so you get it mostly right the first time around without having to redo pieces.  You can print out the designs on paper and draw/write on them, noting which items are content types, blocks, views, etc (you can also do this in a PDF file).
