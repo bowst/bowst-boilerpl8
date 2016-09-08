@@ -6,12 +6,10 @@ version: 1.0
 base theme: bootstrap
 
 regions:
-  topNav: 'Top Nav'
   header: 'Header'
   mainNav: 'Main Nav'
   content: 'Content'
   footer: 'Footer'
-  footerNav: 'Footer Nav'
 
 screenshot: screenshot.png
 libraries:
