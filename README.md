@@ -33,21 +33,21 @@
 3. In "custom/bowst8/src/sass/components-styles" override the color selectors and variables in "_backgrounds.scss" and "_type.scss" with your theme's custom color variables.
 4. Style global buttons and forms based on your design in "custom/bowst8/src/sass/components-styles/buttons" and "../forms".
 5. Compile your styles with Gulp by using the command "gulp watch" in Terminal in the folder "themes/custom/bowst8"
-6. Create your Style Guide page by making a new content type called 'Style Guide' in the Drupal Admin with the url /style-guide.  The twig template in /templates/nodes/node--style-guide.html.twig will automatically apply with all the Style Guide test HTML.  View and test your styles at /style-guide to ensure all elements on the style guide are appropriately styled, matching the consistent styles found in your design. (You might want to update the background classes and add/remove txt-white classes to Style Guide sections to make it look nicer depending on what your brand colors are).
+6. Create your Style Guide page by making a new content type called 'Style Guide' in the Drupal Admin with the url /style-guide.  The twig template in /templates/nodes/node--style-guide.html.twig will automatically apply with all the Style Guide test HTML.  View and test your styles at /style-guide to ensure all elements on the style guide are appropriately styled, matching the consistent styles found in your design. (You might want to update the background classes and add/remove "txt-white" classes to Style Guide sections to make it look nicer depending on what your brand colors are).
 
 
 ### *Important Info*
 
 - **Framework:** The styles are built opon the [Bootstrap 3.3.7 Framework](http://www.getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components. 
 - **Variables:** A good practice for starting on your _variables.scss is to scan all templates in the design file and find all consistent styles for headings, colors, paddings, font styles, etc, and apply them to the appropriate variables, creating a solid base for your theme.  ALWAYS check to see if you can achieve your styles first by overriding bootstrap variables, rather than creating new variables or selectors, especially when concerning global/default elements or Bootstrap components. 
-- **Mobile First:** Bootstrap is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' media queries utilizing the bootstrap breakpoint variables, such as "min-width: $screen-sm-min".
+- **Mobile First:** Bootstrap is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' media queries utilizing the bootstrap breakpoint variables, like "min-width: $screen-sm-min".
 - **Media Queries:** Media queries should reside direclty below the section it pertains to in it's partial file, rather than all existing in a single separate file.
 - **'Component-styles' vs. 'components-drupal' folder:** The "components-styles" folder is for global reusable content that is not bound to a drupal component (like common backgrounds, forms, buttons, etc.), and "components-drupal" are styles that are fully bound to a particular drupal component (such as a view, block, paragraph, etc.).
 - **Partials:** Most of the already created SASS partials, especially the prominent ones like base.scss and variables.scss, have helpful comments at the top of the page describing the purpose and usage of the file.  It is a good idea to go through all of them to get the gist of where things should or shouldn't go.
 
 #6) Build!
 
-1. First, set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
+1. Set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
 2. Make sure that the copyright "original_year" variable in "templates/system/page.html.twig" is correct.
 3. Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
 4. Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
