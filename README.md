@@ -38,7 +38,7 @@
 
 ### *Important Info*
 
-- **Framework:** The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components. 
+- **Framework:** The styles are built opon the [Bootstrap 3.3.7 Framework](http://www.getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components. 
 - **Variables:** A good practice for starting on your _variables.scss is to scan all templates in the design file and find all consistent styles for headings, colors, paddings, font styles, etc, and apply them to the appropriate variables, creating a solid base for your theme.  ALWAYS check to see if you can achieve your styles first by overriding bootstrap variables, rather than creating new variables or selectors, especially when concerning global/default elements or Bootstrap components. 
 - **Mobile First:** Bootstrap is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' media queries utilizing the bootstrap breakpoint variables, such as "min-width: $screen-sm-min".
 - **Media Queries:** Media queries should reside direclty below the section it pertains to in it's partial file, rather than all existing in a single separate file.
