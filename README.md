@@ -54,4 +54,4 @@
 
 ### *Important Info*
 
-- **Planning:** It is a good idea to plan out the entire Drupal structure of your site before you start building, so you get it mostly right the first time around without having to redo pieces.  You can print out the designs on paper and draw/write on them, noting which items are content types, blocks, views, etc (you can also do this in a PDF file).
+- **Planning:** It is a good idea to plan out the entire Drupal structure of your site BEFORE you start building, so you get it mostly right the first time around without having to redo pieces.  You can print out the designs on paper and draw/write on them, noting which items are content types, blocks, views, etc (you can also do this in a PDF file).
