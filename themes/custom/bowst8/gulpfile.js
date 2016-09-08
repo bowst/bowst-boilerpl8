@@ -4,7 +4,7 @@ var gulp 		= require('gulp'),
 	cssmin 		= require('gulp-cssmin'),
 	concat 		= require('gulp-concat'),
 	uglify  	= require('gulp-uglify'),
-	livereload  = require('gulp-livereload'),
+	livereload  = require('gulp-livereload');
 
 // Paths variables
 var paths = {
