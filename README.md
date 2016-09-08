@@ -24,21 +24,24 @@
 ##4) Install
 - Install your newly renamed theme in the Drupal admin in "Appearances".
 - Install your contrib modules located from "modules/contrib" in the Drupal admin in "Extend" (you may not need all of them).
-- Install the node packages in terminal in "themes/custom/bowst8" with the command "npm install".
+- Install the node packages in Terminal in "themes/custom/bowst8" with the command "npm install".
 
 ##5) Styles
 
-- Begin by overriding global variables in "themes/custom/bowst8/src/sass/_variables.scss".  Create custom variables if necessary.  A good practice here is to scan all templates in the design file and find all consistent styles for headings, colors, paddings, font styles, etc, and apply them to the appropriate variables, creating a solid base for your theme.  ALWAYS check to see if you can achieve your styles first by overriding bootstrap variables, rather than creating new variables or selectors, especially when concerning global/default elements or Bootstrap components.
-- Next style global/default elements (h1, h2, p, a, etc) in _base.scss (only if variables are not available for them in the above file).
+- Begin by overriding global variables in "themes/custom/bowst8/src/sass/_variables.scss".  Create custom variables if necessary.  Most base styles will pop right into place upon the customization of these variables. See "Variables" in the below "Information" section for more tips and advice.
+- Next, style global/default elements (h1, h2, p, a, etc) in _base.scss (only if variables are not available for them in the above file).
 - In "custom/bowst8/src/sass/components-styles" override the color selectors and variables in "_backgrounds.scss" and "_type.scss" with your theme's custom color variables.
 - Style global buttons and forms based on your design in "custom/bowst8/src/sass/components-styles/buttons" and "../forms".
-- Compile your styles with Gulp by using the command "gulp watch" in terminal in the folder "themes/custom/bowst8"
+- Compile your styles with Gulp by using the command "gulp watch" in Terminal in the folder "themes/custom/bowst8"
 - TODO: Test your styles in /style-guide .  Ensure all elements on the styleguide are appropriately styled, matching the consistent styles found in your design.
 
 
 ### *Important Info*
 
-- **Framework:** The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components.  It is a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' mediaqueries utilizing the breakpoint variables, such as "min-width: $screen-sm-min".
+- **Framework:** The styles are built opon the Bootstrap 3.3.7 framework (getbootstrap.com), fully utilizing the scaffolding grid, breakpoints, variables, mixins, and various components. 
+- **Variables:** A good practice for starting on your _variables.scss is to scan all templates in the design file and find all consistent styles for headings, colors, paddings, font styles, etc, and apply them to the appropriate variables, creating a solid base for your theme.  ALWAYS check to see if you can achieve your styles first by overriding bootstrap variables, rather than creating new variables or selectors, especially when concerning global/default elements or Bootstrap components. 
+- **Mobile First:** Bootstrapis a mobile first framework, so your defaut styles should reflect the mobile designs, and tablet/desktop styles should exist in 'min-width' media queries utilizing the bootstrap breakpoint variables, such as "min-width: $screen-sm-min".
+- **Media Queries:** Media queries should reside direclty below the section it pertains to in it's partial file, rather than all existing in a single separate file.
 - **'Component-styles' vs. 'components-drupal' folder:** The "components-styles" folder is for global reusable content that is not bound to a drupal component (like common backgrounds, forms, buttons, etc.), and "components-drupal" are styles that are fully bound to a particular drupal component (such as a view, block, paragraph, etc.).
 - **Partials:** Most of the already created SASS partials, especially the prominent ones like base.scss and variables.scss, have helpful comments at the top of the page describing the purpose and usage of the file.  It is a good idea to go through all of them to get the gist of where things should or shouldn't go.
 
