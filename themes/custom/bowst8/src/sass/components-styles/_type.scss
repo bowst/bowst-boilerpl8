@@ -6,22 +6,22 @@
 	  with a design) in Drupal via the wysiwyg editor.
 	- When creating a page that DOES have a design, it is preferable
       to assign variables to the elements rather than use these classes.
-	- ** RENAME selectors and variables with your custom color
+	- ** RENAME colo selectors with your custom color
 	  variable names
    =============================================================== */
 
 
 /* Text Color */
 .txt-brand-primary,
-.txt-purple { color: $purple; }
+.txt-purple { color: $brand-primary; }
 .txt-brand-success,
-.txt-magenta { color: $magenta; }
+.txt-magenta { color: $brand-success; }
 .txt-brand-info,
-.txt-lilac { color: $lilac; }
+.txt-lilac { color: $brand-info; }
 .txt-brand-warning,
-.txt-orange { color: $orange; }
+.txt-orange { color: $brand-warning; }
 .txt-brand-danger,
-.txt-pink { color: $pink; }
+.txt-pink { color: $brand-danger; }
 
 .txt-white { color: $white; }
 

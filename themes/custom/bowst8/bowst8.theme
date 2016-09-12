@@ -6,7 +6,7 @@
 
 
 /* Correct the Viewport */
-function myalept_page_attachments_alter(array &$page){
+function bowst8_page_attachments_alter(array &$page){
   $key = array_search("viewport", array_column($page['#attached']['html_head'], 1));
   $page['#attached']['html_head'][$key][0]['#attributes']['content'] = 'width=device-width, initial-scale=1, maximum-scale=1';
 }
