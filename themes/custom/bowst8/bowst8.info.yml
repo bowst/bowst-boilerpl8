@@ -8,6 +8,7 @@ base theme: bootstrap
 regions:
   header: 'Header'
   mainNav: 'Main Nav'
+  admin: 'Admin'
   content: 'Content'
   footer: 'Footer'
 

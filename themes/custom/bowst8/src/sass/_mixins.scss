@@ -26,11 +26,19 @@
 }
 
 /* Flexbox */
-@mixin flex(){
+@mixin flex-box($alignItems,$justifyContent){
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: $alignItems;
+  -webkit-align-items: $alignItems;
+  -ms-flex-align: $alignItems;
+  align-items: $alignItems;
+  -webkit-box-pack: $justifyContent;
+  -webkit-justify-content: $justifyContent;
+  -ms-flex-pack: $justifyContent;
+  justify-content: $justifyContent;
 }

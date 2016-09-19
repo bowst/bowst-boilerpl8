@@ -102,7 +102,10 @@
 {# MAIN #}
 {% block main %}
   <main id="main" role="main">
-    {{ page.content }}
+    <div class="container">
+      {{ page.admin }}
+      {{ page.content }}
+    </div>
   </main>
 {% endblock %}
 
@@ -114,8 +117,10 @@
 
 {% block footer %}
   <footer id="footer" role="contentinfo">
+    <div class="container">
       {{ page.footer }}
       &copy; {{ copyright_year }}
+    </div>
   </footer>
 {% endblock %}
 
