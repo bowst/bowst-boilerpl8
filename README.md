@@ -64,8 +64,9 @@ sites/default/files/*
 
 1. Set up your regions in bowst8.info.yml (now YOURTHEME.info.yml). It is preset with commonly used regions, but feel free to alter in anyway to match your design.  Remember that any region changes need to be made in "templates/system/page.html.twig" as well in order to see them on the page.
 2. Make sure that the copyright "original_year" variable in "templates/system/page.html.twig" is correct.
-3. Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
-4. Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
+3. In the "Branding" block, uncheck the 'name' and 'slogan' options, so that just the logo that you uploaded in step 3 will display.
+4. Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
+5. Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
 
 ### *Important Info*
 
