@@ -1,4 +1,4 @@
-#BOWST BOILERPL8
+#BB-PL8
 
 - Bowst Boilerpl8 is Bowst's out of the box solution and starting-point for buliding a custom Drupal 8 theme. 
 - Contains standardized folder structures and files for styles, js, twig templates, and drupal modules.
@@ -15,6 +15,20 @@
 ##2) Settings
 
 1. Configure your local site for development. Follow the steps starting on slide #11 in [JP's excellent Drupal 8 Theming slide presentation](https://docs.google.com/presentation/d/1u7NJGbNs55ryeOWRFyQn4oxG5frO3D8AqsSU7Dh1uv0/edit#slide=id.g1334fac1c2_0_129).
+2. Add a .gitignore file in the root of your project that includes the following:
+sites/site-name.dd (ONLY if this is a non-Acquia site)
+sites/default/settings.*.php
+sites/default/files/config*
+sites/default/files/*
+.idea
+.DS_Store
+3. In your .gitattributes file, add the following for your font-awesome files at the bottom to load properly (if they still don't load properly, delete and re-install the font-awesome node package):
+*.otf binary 
+*.eot binary 
+*.svg binary 
+*.ttf binary 
+*.woff binary
+*.woff2 binary
 
 
 ##3) Rename and Replace
