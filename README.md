@@ -15,7 +15,7 @@
 ##2) Settings
 
 1. Configure your local site for development. Follow the steps starting on slide #11 in [JP's excellent Drupal 8 Theming slide presentation](https://docs.google.com/presentation/d/1u7NJGbNs55ryeOWRFyQn4oxG5frO3D8AqsSU7Dh1uv0/edit#slide=id.g1334fac1c2_0_129).
-2. Add a .gitignore file in the root of your project that includes the following:
+2. Add a .gitignore file in the root of your project that includes the following:  
 sites/site-name.dd (ONLY if this is a non-Acquia site)  
 sites/default/settings.*.php  
 sites/default/files/config*  
