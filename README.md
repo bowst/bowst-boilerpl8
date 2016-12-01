@@ -67,6 +67,7 @@ sites/default/files/*
 3. In the "Branding" block, uncheck the 'name' and 'slogan' options, so that just the logo that you uploaded in step 3 will display.
 4. Build out your header and footer in Drupal, altering the HTML if necessary in "custom/bowst8/templates/system/page.html.twig".  The main nav utilizes the Bootstrap "Navbar" Component with a Drupal Menu.  Styles for these components go in their appropriate partials in "sass/layout".
 5. Continue to build out the rest of the site using blocks, views, paragraphs, custom templates, you name it!  
+6. Don't forget to create 'node alias paths' as you create various pages and content types.
 
 ### *Important Info*
 
