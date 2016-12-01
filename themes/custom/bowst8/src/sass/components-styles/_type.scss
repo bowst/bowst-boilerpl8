@@ -22,8 +22,19 @@
 .txt-orange { color: $brand-warning; }
 .txt-brand-danger,
 .txt-pink { color: $brand-danger; }
-
 .txt-white { color: $white; }
+
+/* Text Color - Links */
+a.txt-brand-primary:hover,
+a.txt-purple:hover { color: darken($brand-primary, 15%); }
+a.txt-brand-success:hover,
+a.txt-magenta:hover { color: darken($brand-success, 15%); }
+a.txt-brand-info:hover,
+a.txt-lilac:hover { color: darken($brand-info, 15%); }
+a.txt-brand-warning:hover,
+a.txt-orange:hover { color: darken($brand-warning, 15%); }
+a.txt-brand-danger:hover,
+a.txt-pink:hover { color: darken($brand-danger, 15%); }
 
 /* Font Weights */
 .weight-regular { font-weight: $weightRegular; }
