@@ -13,3 +13,20 @@
 /* Provide top padding in Admin to accommodate a fixed header */
 body.user-logged-in {}
 body.toolbar-tray-open.user-logged-in {}
+
+/* User & Login Pages */
+.user-form,
+.user-login-form,
+.user-pass {
+	@extend .container, .padding-vert;
+}
+
+/* Tabs */
+.nav-tabs {
+	margin: 20px 0 0;
+	> li {
+		> a {
+			padding: 5px 10px;
+		}
+	}
+}
