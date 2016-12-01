@@ -46,3 +46,19 @@
 .padding-lg-left { padding-left: $padding-lg; }
 .padding-lg-vert { padding-top: $padding-lg; padding-bottom: $padding-lg; }
 .padding-lg-horz { padding-left: $padding-lg; padding-right: $padding-lg; } 
+
+/* Padding for Responsive Vertical Stacking Containers */
+.stacked-space { padding-top: $padding; }
+
+@media (min-width: $screen-xs-min){
+	.stacked-space.stacked-space-xs { padding-top: 0; }
+}
+@media (min-width: $screen-sm-min){
+	.stacked-space.stacked-space-sm { padding-top: 0; }
+}
+@media (min-width: $screen-md-min){
+	.stacked-space.stacked-space-md { padding-top: 0; }
+}
+@media (min-width: $screen-lg-min){
+	.stacked-space.stacked-space-lg { padding-top: 0; }
+}
