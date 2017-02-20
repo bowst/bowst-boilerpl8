@@ -17,10 +17,10 @@
 1. Configure your local site for development. Follow the steps starting on slide #11 in [JP's excellent Drupal 8 Theming slide presentation](https://docs.google.com/presentation/d/1u7NJGbNs55ryeOWRFyQn4oxG5frO3D8AqsSU7Dh1uv0/edit#slide=id.g1334fac1c2_0_129).  After following those steps, be sure to make a copy your settings.local.php file and paste in /sites, but rename to something different so it can be committed without it getting used in dev or live environments.
 2. Add a .gitignore file in the root of your project that includes the following (unless added with Acquia, then this will auto generate for you):  
 sites/site-name.dd (ONLY if this is a non-Acquia site)  
-docroot/files 
-docroot/sites/*/files 
-docroot/sites/*/private 
-docroot/sites/default/settings.local.php 
+docroot/files  
+docroot/sites/*/files  
+docroot/sites/*/private  
+docroot/sites/default/settings.local.php  
 3. In your .gitattributes file, add the following for your font-awesome files at the bottom to load properly (if they still don't load properly, delete and re-install the font-awesome node package):  
 *.otf binary  
 *.eot binary  
