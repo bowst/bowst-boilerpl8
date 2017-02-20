@@ -78,42 +78,19 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('content') }}>
-    {{ content }}
+  <div class="hero">
+    <div class="container">
+      <h1>{{ label }}</h1>
+      {% if content.field_subtitle %}
+        <span class="subtitle">{{ content.field_subtitle }}</span>
+      {% endif %}
+    </div>
   </div>
 
-
-  <br /><br />
-
-  <!-- TITLE -->
-  <section class="bg-brand-primary padding-lg-vert">
-    <div class="container text-center">
-      <h1 class="txt-white">STYLE GUIDE</h1><br />
-      <h2 class="txt-white">Inspect the elements below, review SASS partials, and review SASS variables to acheive the demonstrated styles</h2>
-    </div>
-  </section>
-
+  <hr>
 
   <!-- COLORS -->
-  <section class="padding-top">
+  <section class="container padding-vert">
     <h1 class="text-center">Colors</h1><br /><br />
     <div class="row text-center txt-md weight-semi-bold">
       <div class="col-sm-2 padding-sm-vert bg-gray-base txt-white">
@@ -125,10 +102,10 @@
       <div class="col-sm-2 padding-sm-vert bg-gray-dark txt-white">
         Gray Dark
       </div>
-      <div class="col-sm-2 padding-sm-vert bg-gray">
+      <div class="col-sm-2 padding-sm-vert bg-gray txt-white">
         Gray
       </div>
-      <div class="col-sm-2 padding-sm-vert bg-gray-light">
+      <div class="col-sm-2 padding-sm-vert bg-gray-light txt-white">
         Gray Light
       </div>
       <div class="col-sm-2 padding-sm-vert bg-gray-lighter">
@@ -152,6 +129,7 @@
       </div>
   </section>
 
+  <hr />
 
   <!-- TYPOGRAPHY -->
   <section class="padding-vert">
@@ -173,11 +151,11 @@
         </div>
         <div class="col-sm-3">
           <h2>Colors</h2>
-          <span class="txt-brand-primary">Purple</span> <br />
-          <span class="txt-brand-success">Magenta</span><br />
-          <span class="txt-brand-info">Lilac</span> <br />
-          <span class="txt-brand-warning">Orange</span> <br />
-          <span class="txt-brand-danger">Pink</span> <br />
+          <span class="txt-brand-primary">Brand Primary</span> <br />
+          <span class="txt-brand-success">Brand Success</span><br />
+          <span class="txt-brand-info">Brand Info</span> <br />
+          <span class="txt-brand-warning">Brand Warning</span> <br />
+          <span class="txt-brand-danger">Brand Danger</span> <br />
           <strong class="txt-white bg-brand-success">White</strong>
         </div>
         <div class="col-sm-3">
@@ -218,25 +196,27 @@
     </div>
   </section>
 
+  <hr />
 
   <!-- HEADINGS -->
-  <section class="bg-brand-success padding-vert">
+  <section class="padding-vert">
     <div class="container">
-      <h1 class="txt-white text-center">Headings</h1><br />
-      <h1><span class="txt-white">H1</span> - The quick brown fox jumps over the lazy dog.</h1>
-      <h2><span class="txt-white">H2</span> - The quick brown fox jumps over the lazy dog.</h2>
-      <h3><span class="txt-white">H3</span> - The quick brown fox jumps over the lazy dog.</h3>
-      <h4><span class="txt-white">H4</span> - The quick brown fox jumps over the lazy dog.</h4>
-      <h5><span class="txt-white">H5</span> - The quick brown fox jumps over the lazy dog.</h5>
-      <h6><span class="txt-white">H6</span> - The quick brown fox jumps over the lazy dog.</h6>
+      <h1 class="text-center">Headings</h1><br />
+      <h1><span>H1</span> - The quick brown fox jumps over the lazy dog.</h1>
+      <h2><span>H2</span> - The quick brown fox jumps over the lazy dog.</h2>
+      <h3><span>H3</span> - The quick brown fox jumps over the lazy dog.</h3>
+      <h4><span>H4</span> - The quick brown fox jumps over the lazy dog.</h4>
+      <h5><span>H5</span> - The quick brown fox jumps over the lazy dog.</h5>
+      <h6><span>H6</span> - The quick brown fox jumps over the lazy dog.</h6>
     </div>
   </section>
 
+  <hr />
 
   <!-- ALIGNMENT -->
-  <section class="bg-brand-info padding-vert">
+  <section class="padding-vert">
     <div class="container">
-      <h1 class="txt-white text-center">Alignment</h1><br />
+      <h1 class="text-center">Alignment</h1><br />
       <h2 class="text-left">Left aligned text.</h2>
       <h2 class="text-center">Center aligned text.</h2>
       <h2 class="text-right">Right aligned text.</h2>
@@ -247,14 +227,15 @@
     </div>
   </section>
 
+  <hr />
 
   <!-- LISTS -->
-  <section class="bg-brand-warning padding-vert">
+  <section class="padding-vert">
     <div class="container">
-      <h1 class="txt-white text-center">Lists</h1><br /><br />
-      <div class="row txt-white">
+      <h1 class="text-center">Lists</h1><br /><br />
+      <div class="row">
         <div class="col-sm-4">
-          <h2 class="txt-brand-primary">Unordered Lists</h2>
+          <h2>Unordered Lists</h2>
           <ul>
             <li>List Item</li>
             <li>List Item</li>
@@ -269,7 +250,7 @@
           </ul>
         </div>
         <div class="col-sm-4">
-          <h2 class="txt-brand-primary">Ordered Lists</h2>
+          <h2>Ordered Lists</h2>
           <ol>
             <li>List Item</li>
             <li>List Item</li>
@@ -284,7 +265,7 @@
           </ol>
         </div>
         <div class="col-sm-4">
-          <h2 class="txt-brand-primary">Unstyled Lists</h2>
+          <h2>Unstyled Lists</h2>
           <ul class="list-unstyled">
             <li>List Item</li>
             <li>List Item</li>
@@ -302,45 +283,47 @@
     </div>
   </section>
 
+  <hr />
 
   <!-- BACKGROUNDS -->
-  <section>
-    <div class="container padding-sm-vert">
+  <section class="container padding-vert">
+    <div class="container padding-sm-bottom">
       <h1 class="text-center">Backgrounds</h1>
     </div>
     <div class="padding-sm-vert bg-brand-primary">
       <div class="container">
-        <h2 class="txt-white">Purple background</h2>
+        <h2 class="txt-white">Brand Primary background</h2>
       </div>
     </div>
     <div class="padding-sm-vert bg-brand-success">
       <div class="container">
-        <h2 class="txt-white">Magenta background</h2>
+        <h2 class="txt-white">Brand Success background</h2>
       </div>
     </div>
     <div class="padding-sm-vert bg-brand-info">
       <div class="container">
-        <h2 class="txt-white">Lilac background</h2>
+        <h2 class="txt-white">Brand Info background</h2>
       </div>
     </div>
     <div class="padding-sm-vert bg-brand-warning">
       <div class="container">
-        <h2 class="txt-white">Orange background</h2>
+        <h2 class="txt-white">Brand Warning background</h2>
       </div>
     </div>
     <div class="padding-sm-vert bg-brand-danger">
       <div class="container">
-        <h2 class="txt-white">Pink background</h2>
+        <h2 class="txt-white">Brand Danger background</h2>
       </div>
     </div>
   </section>
 
+  <hr />
 
   <!-- FORMS -->
-  <section class="bg-brand-primary padding-vert">
+  <section class="padding-vert">
     <div class="container">
-      <h1 class="txt-white text-center">Forms</h1><br /><br />
-      <div class="row txt-white">
+      <h1 class="text-center">Forms</h1><br /><br />
+      <div class="row">
         <div class="col-sm-6">
           <h2 class="txt-white">Fields</h2>
           <div class="form-group">
@@ -366,17 +349,18 @@
           </div>
         </div>
         <div class="col-sm-4 col-sm-offset-2">
-          <h2 class="txt-white">Buttons</h2>
-          <input type="submit" class="btn btn-purple" value="Submit" /><br /><br />
-          <button class="btn btn-magenta">Submit</button><br /><br />
-          <button class="btn btn-lilac">Submit</button><br /><br />
-          <button class="btn btn-orange">Submit</button><br /><br />
-          <button class="btn btn-pink">Submit</button>
+          <h2>Buttons</h2>
+          <input type="submit" class="btn btn-primary" value="Submit" /><br /><br />
+          <button class="btn btn-success">Submit</button><br /><br />
+          <button class="btn btn-info">Submit</button><br /><br />
+          <button class="btn btn-warning">Submit</button><br /><br />
+          <button class="btn btn-danger">Submit</button>
         </div>
       </div>
     </div>
   </section>
 
+  <hr />
 
   <!-- PADDING -->
   <section class="padding-vert">

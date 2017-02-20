@@ -16,6 +16,7 @@ body {
 /* Smoother fonts */
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Responsive images */
@@ -23,6 +24,12 @@ img {
   max-width: 100%;
   height: auto;
   width: auto;
+}
+
+/* Responsive Video */
+iframe,
+video {
+  max-width: 100%;
 }
 
 /* Headings */
