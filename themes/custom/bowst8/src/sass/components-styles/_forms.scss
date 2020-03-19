@@ -3,15 +3,13 @@
 	- Global form styles and Bootstrap form overrides
    =============================================================== */
 
-
-input[type="text"],
-input[type="email"],
-input[type="search"],
-input[type="password"],
-input[type="number"],
-input[type="tel"],
+input[type='text'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
 select,
-textarea,
-.form-control {
+textarea {
+    @extend .form-control;
 }
-

@@ -4,5 +4,4 @@ global-src:
     theme:
       public/css/globals.css: {}
   js:
-    public/js/scripts.js: {}
-    
+    public/js/app.js: {}

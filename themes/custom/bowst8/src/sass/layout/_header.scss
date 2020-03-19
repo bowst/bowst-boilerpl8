@@ -1,11 +1,17 @@
 /* ==============================================================
    HEADER
-   - Styles for anything that resides in the header, even if it 
-     is a drupal component, can live here.
+   - Styles for anything that resides in the header
    ============================================================== */
 
-
 #header {
-	.logo {
-	}
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    .navbar-brand {
+        img {
+            width: 120px;
+            height: 31px;
+        }
+    }
 }

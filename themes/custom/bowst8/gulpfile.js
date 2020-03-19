@@ -1,49 +1,55 @@
-var gulp 		= require('gulp'),
-	pump 		= require('pump'),
-	sass 		= require('gulp-sass'),
-	cssmin 		= require('gulp-cssmin'),
-	concat 		= require('gulp-concat'),
-	uglify  	= require('gulp-uglify'),
-	livereload  = require('gulp-livereload');
+var pkg = require('./package.json');
+var gulp = require('gulp');
+var watch = require('gulp-watch');
+var install = require('gulp-install');
 
-// Paths variables
-var paths = {
-  'dev': {
-    'sass': './src/sass/',
-    'js': './src/js/'
-  },
-  'assets': {
-    'css': './public/css/',
-    'js': './public/js/'
-  }
+const BrowserSync = require('./gulp-tasks/browser-sync');
+const streamToBrowserSync = require('./gulp-tasks/browser-sync').stream;
+const Modernizr = require('./gulp-tasks/modernizr');
+const Images = require('./gulp-tasks/images');
+const Scripts = require('./gulp-tasks/scripts');
+const Sass = require('./gulp-tasks/sass');
 
-};
-
-gulp.task('globals.css', function(){
-	return gulp.src(paths.dev.sass + 'globals.scss')
-		.pipe(sass())
-		.pipe(cssmin())
-		.pipe(gulp.dest(paths.assets.css))
-		.pipe(livereload());
+gulp.task('npm', function() {
+    return gulp.src(['./package.json']).pipe(install());
 });
 
-gulp.task('scripts.js', function (cb) {
-	pump([
-        gulp.src([
-			'src/js/*.js'
-    	])
-    	.pipe(concat('scripts.js')),
-        uglify(),
-        gulp.dest(paths.assets.js)
-    ],
-    cb
-  );
+gulp.task('sass', Sass.build);
+
+gulp.task('js', Scripts.build);
+gulp.task('js-watch', ['js'], BrowserSync.reload);
+
+gulp.task('modernizr', Modernizr);
+
+gulp.task('browser-sync-init', BrowserSync.initialize);
+gulp.task('reload-watch', BrowserSync.reload);
+
+gulp.task('watch', ['npm', 'sass', 'js', 'browser-sync-init'], function() {
+    gulp.watch(pkg.config.sassPath + '/**/*.scss', ['sass']);
+    gulp.watch(pkg.config.jsPath + '/**/*.js', ['js-watch']);
+
+    //Using gulp-watch instead of gulp.watch because it will catch NEW files
+    watch(pkg.config.images + '/source/**/*.*', Images.minify);
+    watch(pkg.config.images + '/*.*', function() {
+        try {
+            BrowserSync.reload();
+        } catch (err) {
+            //don't care!
+        }
+    });
+
+    gulp.watch(
+        ['./**/*.php', pkg.config.jsDest + '/libraries/modernizr-custom.js'],
+        ['reload-watch']
+    );
 });
 
-gulp.task('build', ['globals.css', 'scripts.js']);
-
-gulp.task('watch', function(){
-	livereload.listen();
-	gulp.watch(paths.dev.sass + '**/*.scss', ['globals.css']);
-	gulp.watch(paths.dev.js + '*.js', ['scripts.js']);
+gulp.task('build', ['npm', 'sass', 'js', 'modernizr'], function() {
+    gulp.watch(pkg.config.sassPath + '/**/*.scss', ['sass']);
 });
+
+gulp.task('watch-css', ['sass', 'browser-sync-init'], function() {
+    gulp.watch(pkg.config.sassPath + '/**/*.scss', ['sass']);
+});
+
+gulp.task('default', ['watch']);

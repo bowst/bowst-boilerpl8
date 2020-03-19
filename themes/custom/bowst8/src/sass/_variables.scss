@@ -1,198 +1,182 @@
-/* ===============================================================
-   VARIABLES
-   - Bootstrap variable overrides AND CUSTOM site variables
-     (not 100% replica of original bootstrap variables stylesheet)
-   - Copy only the Bootstrap variables you want to override and 
-     paste below, keeping them in appropriate sections.  
-   - Be sure to remove the !default after each variable.
-   - Bootstrap variables file lives in
-     ../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
-=============================================================== */
+// /* ===============================================================
+//    VARIABLES
+//    - Bootstrap variable overrides AND CUSTOM site variables
+//      (not 100% replica of original bootstrap variables stylesheet)
+//    - Copy only the Bootstrap variables you want to override and
+//      paste below, keeping them in appropriate sections.
+//    - Be sure to remove the !default after each variable.
+//    - Bootstrap variables file lives in
+//      ../node_modules/bootstrap/scss/_variables.scss
+// =============================================================== */
 
-
-//
 // Variables
-// --------------------------------------------------
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-
-//== Colors
+//
+// Color system
 //
 
-// Brand Color Overrides
-$purple:         		#3b0083;
-$magenta:         		#b1059d;
-$lilac:            		#9dabe2;
-$orange:         		#ea7200;
-$pink:          		#ee008c;
-$green:                 #8DC63F;
+// // Gray Overrides
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
 
-// Brand Colors
-$brand-primary:         $purple;
-$brand-success:         $magenta;
-$brand-info:            $lilac;
-$brand-warning:         $orange;
-$brand-danger:          $pink;
+// // Brand Color Overrides
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
 
-// Gray Overrides
-$white:					 #fff;
-$gray-base:              #231f20;
-$gray-darker:            #414042;
-$gray-dark:              #6d6e71;
-$gray:                   #bcbec0;
-$gray-light:             #e6e7e8;
-$gray-lighter:           #eee;
+// // Brand Colors
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
 
-
-//== Scaffolding
+// Body
 //
-//## Settings for some of the most global styles.
+// Settings for the `<body>` element.
 
-//** Background color for `<body>`.
-$body-bg:               $white;
-//** Global text color on `<body>`.
-$text-color:            $gray-darker;
+$body-bg: $white;
+$body-color: $gray-900;
 
-//** Global textual link color.
-$link-color:            $magenta;
-//** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%);
-//** Link hover decoration.
+// Links
+//
+// Style anchor elements.
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
-
-//== Typography
+// Fonts
 //
-//## Font, line-height, and color for body text, headings, and more.
+// Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:        $font-family-sans-serif !default;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+// //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family-base: $font-family-sans-serif;
 
-$font-size-small:         12px;
-$font-size-base:          14px;
-$font-size-medium:        16px;
-$font-size-large:         20px;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * 0.875) !default;
 
-$font-size-h1:            32px;
-$font-size-h2:            22px;
-$font-size-h3:            18px;
-$font-size-h4:            16px;
-$font-size-h5:            14px;
-$font-size-h6:            12px;
+$h1-font-size: 32px;
+$h2-font-size: 22px;
+$h3-font-size: 18px;
+$h4-font-size: 16px;
+$h5-font-size: 14px;
+$h6-font-size: 12px;
 
-//** Font Weights
-$weightRegular:			  400;
-$weightMedium:			  500;
-$weightSemiBold:		  600;
-$weightBold:			  700;
+// //** Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
 
-//** Paragraphs
-$paragraphMargin:		  1em;
+// //** Paragraphs
+$paragraph-margin-bottom: 1em;
 
-//** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.428571429; // 20/14
-//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+// //** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.428571429; // 20/14
+// //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)); // ~20px
 
-//** By default, this inherits from the `<body>`.
-$headings-font-family:    inherit;
-$headings-font-weight:    bold;
-$headings-line-height:    1.1;
-$headings-color:          $purple;
+// //** By default, this inherits from the `<body>`.
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1;
+$headings-color: $purple;
 
-
-//== Components
+// Components
 //
-//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+// Define common padding and border radius sizes and more.
 
-// Custom Padding
-$padding-sm:				20px;
-$padding:					40px;
-$padding-md:				80px;
-$padding-lg:				100px;
+// // Custom Padding
+$padding-sm: 20px;
+$padding: 40px;
+$padding-md: 80px;
+$padding-lg: 100px;
 
-// Line Height
-$line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
-$line-height-small:         1; // 20
+// // Line Height
+$line-height-lg: 1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-sm: 1; // 20
 
-// Border Radius
-$border-radius-base:        10px;
-$border-radius-large:       20px;
-$border-radius-small:       5px;
-$border-radius-round:		50%;
-
-
-//== Container sizes
+// Grid breakpoints
 //
-//## Define the maximum width of `.container` for different screen sizes.
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
 
-$max-width:					1024px;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+) !default;
 
-
-//== Navbar
+// Grid containers
 //
-//##
+// Define the maximum width of `.container` for different screen sizes.
 
-// Basics of a navbar
-$navbar-height:                    56px;
-$navbar-margin-bottom:             0;
-$navbar-border-radius:             0;
-$navbar-padding-horizontal:        0;
-$navbar-padding-vertical:          12px;
-$navbar-collapse-max-height:       340px;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+) !default;
 
-$navbar-default-color:             $purple;
-$navbar-default-bg:                transparent;
-$navbar-default-border:            transparent; 
-
-// Navbar links
-$navbar-default-link-color:                $purple;
-$navbar-default-link-hover-color:          $magenta;
-$navbar-default-link-hover-bg:             transparent;
-$navbar-default-link-active-color:         $magenta;
-$navbar-default-link-active-bg:            transparent;
-$navbar-default-link-disabled-color:       #ccc;
-$navbar-default-link-disabled-bg:          transparent;
-
-// Navbar brand label
-$navbar-default-brand-color:               $navbar-default-link-color;
-$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
-$navbar-default-brand-hover-bg:            transparent;
-
-// Navbar toggle
-$navbar-default-toggle-hover-bg:           $purple;
-$navbar-default-toggle-icon-bar-bg:        $magenta;
-$navbar-default-toggle-border-color:       transparent;
-
-
-//== Forms
+// Grid columns
 //
-//##
+// Set the number of columns and specify the width of the gutters.
 
-//** Placeholder text color
-$input-color-placeholder:        #9B9B9B;
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
 
-//** `.form-group` margin
-$form-group-margin-bottom:       20px;
-
-//** Text color for `<input>`s
-$input-color:                    #939598;
-//** `<input>` border color
-$input-border:                   $lilac;
-
-
-//== Navs
+// Components
 //
-//##
+// Define common padding and border radius sizes and more.
 
-//=== Shared nav styles
-$nav-link-padding:                          0;
-$nav-link-hover-bg:                         transparent;
+$border-width: 1px !default;
+$border-color: $gray-400;
 
-$nav-disabled-link-color:                   $gray-light;
-$nav-disabled-link-hover-color:             $gray-light;
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+$border-radius-round: 50%;
 
+// Forms
 
+// //** Placeholder text color
+$input-placeholder-color: $gray-600 !default;
+$input-plaintext-color: $body-color !default;
 
+// //** Text color for `<input>`s
+$input-color: $gray-700 !default;
+// //** `<input>` border color
+$input-border-color: $gray-400 !default;
+
+// //** `.form-group` margin
+$form-group-margin-bottom: 20px;
