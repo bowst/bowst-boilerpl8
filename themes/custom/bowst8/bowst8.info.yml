@@ -3,7 +3,7 @@ type: theme
 description: Drupal 8 Boilerplate Theme for Bowst.
 core: 8.x
 version: 1.0
-base theme: bootstrap
+base theme: false
 
 regions:
   header: 'Header'
